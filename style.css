@@ -1,0 +1,1026 @@
+@font-face {
+  font-family: 'atwic';
+  src: url('tipografia/Atwic/font/Atwic-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'baloo';
+  src: url('tipografia/baloo/baloo/Baloo-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'dimbo';
+  src: url('tipografia/dimbo/Dimbo\ Regular.ttf');
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'atwic';
+  background-color: #4e9f42 !important;
+  margin: 0;
+  padding: 0;
+}
+.index{
+  display: none;
+}
+.nosotros{
+  display: none;
+}
+.nuestros_productos{
+  display: none;
+}
+.novedades{
+  display: none;
+}
+.contactos{
+  display: none;
+}
+.bg-carsa {
+  background-color: #16569e;
+}
+
+.inicio-carsa {
+  margin-top: 110px !important;
+  background-color: #024a9a;
+}
+
+
+.inicio-carsa img {
+  width: 70%;
+}
+
+.carsa-inicio {
+  width: 40% !important;
+  top: 24%;
+  left: 30%;
+  position: absolute;
+  animation: escalar 4s ease-in-out infinite;
+}
+
+.carsa-slogan {
+  width: 59% !important;
+  top: 66%;
+  left: 20%;
+  position: absolute;
+  animation: escalar 4s ease-in-out infinite;
+}
+
+.gall-top-rigth {
+  width: 12% !important;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  animation: flotante 4s ease-in-out infinite;
+  /* Aplica la animación */
+}
+
+.gall-center-rigth {
+  width: 12% !important;
+  position: absolute;
+  top: 43%;
+  left: 13%;
+  animation: rotacionDerecha 4s linear infinite;
+}
+
+.gall-bottom-rigth {
+  width: 12% !important;
+  position: absolute;
+  top: 73%;
+  left: 8%;
+  animation: flotante-bottom 4s ease-in-out infinite;
+  /* Aplica la animación */
+
+}
+
+.gall-top-left {
+  width: 12% !important;
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  animation: flotante 4s ease-in-out infinite;
+  /* Aplica la animación */
+
+}
+
+.gall-center-left {
+  width: 11% !important;
+  position: absolute;
+  top: 43%;
+  right: 13%;
+  animation: rotacionIzquierda 4s linear infinite;
+}
+
+.gall-bottom-left {
+  width: 12% !important;
+  position: absolute;
+  top: 70%;
+  right: 8%;
+  animation: flotante-bottom 4s ease-in-out infinite;
+  /* Aplica la animación */
+
+}
+
+.navbar {
+  font-family: 'atwic';
+}
+
+.logo-navbar {
+  height: 90px;
+  margin: 5px 0px 5px 30px;
+}
+
+.navbar-nav a {
+  color: white;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+  /* Transición suave para el cambio de color y fondo */
+}
+.iconos-cabecera{
+  margin-right: 20px;
+}
+
+.navbar-action {
+  background: #5c9ed6 !important;
+  color: white !important;
+}
+
+.navbar-nav a:hover {
+  background: #5c9ed6;
+  color: white;
+}
+
+
+
+.login-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  /* Asegúrate de que el botón sea lo suficientemente grande */
+  height: 60px;
+  /* para contener la imagen con padding */
+  border-radius: 50%;
+  background-color: transparent;
+  /* Fondo transparente para el enlace */
+  text-decoration: none;
+  /* Sin subrayado para el enlace */
+}
+
+.navbar-nav .nav-item {
+  display: flex;
+  align-items: center;
+  /* Asegura que los elementos estén alineados verticalmente */
+}
+
+.navbar-nav .nav-item+.nav-item::before {
+  content: "•";
+  /* El separador */
+  color: #5c9ed6;
+  /* Color del puntito */
+  margin: 3px 3px;
+  /* Espacio alrededor del puntito */
+  font-size: 20px;
+  /* Tamaño del puntito */
+  display: inline-block;
+  vertical-align: middle;
+  /* Alinea el puntito verticalmente en el centro */
+}
+
+.carousel .carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.inicio-carousel img {
+  width: 100% !important;
+  height: 90vh !important;
+}
+
+
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  /* Cambiado a negro para mejorar la visibilidad */
+}
+
+.line {
+  flex: 1;
+  border-bottom: 2px solid white;
+  /* Línea negra */
+  height: 0;
+  /* Asegura que la línea esté centrada verticalmente */
+  margin: 0 10px;
+}
+
+.title {
+  padding: 0 10px;
+}
+
+.iso {
+  background-image: url('img/nosotros/fondo3.jpg');
+  background-size: cover;
+  /* Ajusta la imagen para que cubra todo el contenedor */
+  background-repeat: no-repeat;
+  /* Evita que la imagen se repita */
+  background-position: center;
+  /* Centra la imagen en el contenedor */
+  width: 100%;
+  /* Asegúrate de que el contenedor tenga un ancho */
+  height: auto;
+  /* O cualquier altura que desees */
+
+}
+
+
+.iso-blanco {
+  padding: 80px 80px 80px 80px;
+  background-image: url('img/nosotros/fondo_Mesa.png');
+  background-size: cover;
+  /* Ajusta la imagen para que cubra todo el contenedor */
+  background-repeat: no-repeat;
+  /* Evita que la imagen se repita */
+  background-position: center;
+  /* Centra la imagen en el contenedor */
+  width: 100%;
+  /* Asegúrate de que el contenedor tenga un ancho */
+  height: auto;
+  /* O cualquier altura que desees */
+}
+
+.fondo-blanco {
+  width: 100%;
+  height: auto;
+
+}
+
+
+.ibnorca {
+  width: 500px;
+  height: auto;
+}
+
+.nproductos {
+  position: relative;
+  width: 100%;
+}
+
+.nproductos-mesa {
+  width: 100% !important;
+}
+
+.nproductos-total img {
+  padding: 0;
+  width: 16%;
+  margin: 0 0px 0 0px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.nproductos-total img:hover {
+  transform: scale(1.1); /* Aumenta el tamaño en un 10% */
+}
+.nproductos-total a {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nproductos-total a:hover {
+  transform: scale(1.1); /* Aumenta el tamaño en un 10% */
+}
+
+.nproductos-segunda {
+  margin-top: -50px;
+  text-align: right;
+  padding-right: 8%;
+}
+.nproductos-tercera {
+  margin-top: -50px;
+}
+
+.nproductos-segunda img {
+  width: 18%;
+}
+
+.nproductos-total {
+  position: absolute;
+  top: 16%;
+}
+
+
+.alfa {
+  opacity: 0;
+  transform: scale(0.1);
+  position: relative;
+}
+
+
+.alfa-f {
+  width: 100%;
+  /* Ajusta según tus necesidades */
+  height: auto;
+  /* Ajusta según tus necesidades */
+}
+.btn-productos{
+  top: 20%;
+  right: 6%;
+  position: absolute;
+  z-index: 50;
+
+}
+
+.superponer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Ajusta según tus necesidades */
+  height: auto;
+  /* Ajusta según tus necesidades */
+  z-index: 1;
+  /* Asegura que esta imagen esté encima de la otra */
+}
+
+.nosotros {
+  margin-top: 110px;
+}
+
+.letra-producto {
+  position: absolute;
+  top: -25px;
+  left: -15px;
+  width: 38% !important;
+}
+
+
+
+.valores {
+  margin: 0 100px 0 0px;
+  width: 80%;
+  height: auto;
+}
+
+
+
+
+
+.iso-blanco2 {
+  width: 100%;
+  height: auto;
+  margin-top: -100px !important;
+}
+.foto_historia {
+
+  width: 100%;
+  height: auto;
+}
+
+.iso-blanco-nosotros {
+  width: 102%;
+  height: 45rem !important;
+  height: 500px;
+  margin-left: 10px;
+  margin-top: -220px;
+
+}
+
+.ibnorca-text-blanco {
+  position: absolute;
+  width: 90% !important;
+  left: 70px;
+  top: -150px;
+}
+
+.inicio-nosotros-blanco{
+  position: relative;
+}
+.fondo_valores {
+  position: absolute;
+  top: 20px;
+  left: 70px;
+  background-image: url('img/nosotros/hilo.png');
+  background-size: contain;
+  /* Ajusta la imagen para que cubra todo el contenedor */
+  background-repeat: no-repeat;
+  /* Evita que la imagen se repita */
+  background-position: center;
+  /* Centra la imagen en el contenedor */
+}
+
+.inicio-blanco-nosotros{
+  position: relative;
+}
+
+
+
+.fondo-blanco-novedades{
+  width: 90%;
+  position: relative;
+  top: 4.5rem;
+  margin-left: 20px;
+}
+.videos-novedades{
+  width: 80%;
+  position: absolute;
+  top: 11rem;
+  
+}
+
+.ibnorca-text-blanco p {
+  font-size: 1rem;
+}
+
+
+
+
+
+
+
+.video-responsive {
+  width: 100%; /* Los videos tomarán el 100% del ancho de su contenedor */
+  height: auto; /* Mantiene la relación de aspecto */
+}
+.familia{
+  margin-top: -40px !important;
+  margin-bottom: 30px !important;
+}
+
+
+
+
+
+
+
+
+.iso-novedades {
+  margin-top: 1rem;
+  background-image: url('img/nosotros/fondo3.jpg');
+  background-size: cover;
+  /* Ajusta la imagen para que cubra todo el contenedor */
+  background-repeat: no-repeat;
+  /* Evita que la imagen se repita */
+  background-position: center;
+  /* Centra la imagen en el contenedor */
+  width: 100%;
+  /* Asegúrate de que el contenedor tenga un ancho */
+  height: 100vh;
+  /* O cualquier altura que desees */
+}
+
+.facebock-novedades {
+  width: 22%;
+  height: 95%;
+  transform: translate(-70px, -40px);
+  animation: flotante 4s ease-in-out infinite;
+
+}
+
+.instagram-novedades {
+  width: 18%;
+  height: 85%;
+  transform: translate(0px, -40px);
+  animation: flotante 4s ease-in-out infinite;
+
+}
+
+.tiktok-novedades {
+  width: 22%;
+  height: 95%;
+  transform: translate(70px, -40px);
+  animation: flotante 4s ease-in-out infinite;
+
+}
+
+
+
+.contactos-personas {
+  margin-top: 5%;
+  background-image: url('img/contactos/fofofo.jpg');
+  background-size: cover;
+  /* Ajusta la imagen para que cubra todo el contenedor */
+  background-repeat: no-repeat;
+  /* Evita que la imagen se repita */
+  background-position: center;
+  
+  width: 100%;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+ 
+}
+
+
+.contactos-form {
+  background-image: url('img/contactos/CONTACTOO5.png');
+  background-size: cover;
+  /* Ajusta la imagen para que cubra todo el contenedor */
+  background-repeat: no-repeat;
+  /* Evita que la imagen se repita */
+  background-position: center;
+  width: 100% !important;
+  height: 100vh;
+  position: relative;
+
+}
+.contactos-form-envio{
+  padding:1em 4% 0 8%;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 16.5%;
+  left: 3%;
+
+}
+
+.btn-enviar{
+  background-color: #ffb900 !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+
+}
+.btn-enviar:hover{
+
+  transform: scale(1.1); /* Aumenta el tamaño en un 10% */
+
+}
+
+.wave-line {
+  position: absolute;
+  top: 70px;
+  /* Asegúrate de que la línea esté en la parte inferior del contenedor */
+  left: 49%;
+  transform: translateX(-50%);
+  width: 45%;
+  /* Ajusta el ancho para que coincida con el contenedor */
+  height: 20px;
+  /* Ajusta la altura según sea necesario */
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 20'%3E%3Cpath d='M0 10 Q 10 0, 20 10 T 40 10 T 60 10 T 80 10 T 100 10 T 120 10' stroke='%235c9ed6' stroke-width='3' fill='none'/%3E%3C/svg%3E") repeat-x;
+  background-size: contain;
+}
+
+.cabecera-form {
+  margin-top: 12%;
+  color: #16569e;
+  background-color: #ffb900;
+  padding: 0;
+}
+
+.pie-pagina {
+  font-family: 'atwic';
+  width: 100%;
+  height: auto;
+  background-color: #16569e;
+}
+.pie-pagina-contactos img{
+  width: 5%;
+}
+
+.logo-pie-pagina {
+  width: 70%;
+}
+
+.pie-pagina a {
+  margin-top: 10px;
+  padding: 0;
+  text-decoration: none;
+  color: white;
+}
+
+.pie-pagina a:hover {
+  color: #ffb900;
+}
+
+.pie-pagina label {
+  display: block;
+  color: white;
+}
+.medios-pie{
+  padding: 0;
+  margin: 0;
+}
+.medios-pie a{
+  width: 100%;
+}
+.medios-pie img{
+  padding: 0;
+  margin: 0;
+  width: 
+  50%;
+}
+
+.copy{
+  font-size: 1rem;
+}
+
+
+
+.flotante {
+  position: fixed;
+  bottom: 30px;
+  right: -590px;
+  z-index: 100;
+}
+
+.flotante img {
+  width: 11%;
+}
+.flotante:hover img {
+  animation: ring 1s ease-in-out; /* Cambiar a 1s para duración de la animación */
+}
+
+/*Inicio estilos loading*/
+/* Preloader */
+.ctn-preloader {
+	align-items: center;
+  cursor: none;
+	display: flex;
+  height: 100%;
+  justify-content: center;
+	position: fixed;
+	left: 0;
+  top: 0;
+	width: 100%;
+  z-index: 900;
+}
+
+.ctn-preloader .animation-preloader {
+	position: absolute;
+  z-index: 100;
+}
+
+/* Spinner cargando */
+.ctn-preloader .animation-preloader .spinner {
+  animation: spinner 1s infinite linear;
+	border-radius: 50%;
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  border-top-color: #000000; /* No se identa por orden alfabetico para que no lo sobre-escriba */
+  height: 9em;
+  margin: 0 auto 3.5em auto;
+  width: 9em;
+}
+
+/* Texto cargando */
+.ctn-preloader .animation-preloader .txt-loading {
+  font: bold 5em 'Montserrat', sans-serif;
+	text-align: center;
+	user-select: none;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:before {
+  animation: letters-loading 4s infinite;
+  color: #000000;
+  content: attr(data-text-preloader);
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transform: rotateY(-90deg);
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading {
+	position: relative;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(2):before {
+  animation-delay: 0.2s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(3):before {
+  animation-delay: 0.4s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(4):before {
+  animation-delay: 0.6s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(5):before {
+  animation-delay: 0.8s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(6):before {
+  animation-delay: 1s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(7):before {
+  animation-delay: 1.2s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(8):before {
+  animation-delay: 1.4s;
+}
+
+.ctn-preloader .animation-preloader .txt-loading .letters-loading {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.ctn-preloader .loader-section {
+  background-color: #ffffff;
+  height: 100%;
+	position: fixed;
+  top: 0;
+  width: calc(50% + 1px);
+}
+
+.ctn-preloader .loader-section.section-left {
+  left: 0;
+}
+
+.ctn-preloader .loader-section.section-right {
+  right: 0;
+}
+
+/* Efecto de fade en la animación de cargando */
+.loaded .animation-preloader {
+  opacity: 0;
+  transition: 0.3s ease-out;
+}
+
+/* Efecto de cortina */
+.loaded .loader-section.section-left {
+  transform: translateX(-101%);
+  transition: 0.7s 0.3s all cubic-bezier(0.1, 0.1, 0.1, 1.000);
+}
+
+.loaded .loader-section.section-right {
+  transform: translateX(101%);
+  transition: 0.7s 0.3s all cubic-bezier(0.1, 0.1, 0.1, 1.000);
+}
+
+/* Animación del preloader */
+@keyframes spinner {
+	to {
+		transform: rotateZ(360deg);
+	}
+}
+
+/* Animación de las letras cargando del preloader */
+@keyframes letters-loading {
+  0%,
+  75%,
+  100% {
+  	opacity: 0;
+    transform: rotateY(-90deg);
+  }
+
+  25%,
+  50% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+
+/* Tamaño de portatil hacia atras (portatil, tablet, celular) */
+@media screen and (max-width: 767px) {
+	/* Preloader */
+	/* Spinner cargando */	
+	.ctn-preloader .animation-preloader .spinner {
+		height: 8em;
+		width: 8em;
+	}
+
+	/* Texto cargando */
+	.ctn-preloader .animation-preloader .txt-loading {
+	  font: bold 3.5em 'Montserrat', sans-serif;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	/* Prelaoder */
+	/* Spinner cargando */
+	.ctn-preloader .animation-preloader .spinner {
+		height: 7em;
+		width: 7em;
+	}
+
+	/* Texto cargando */
+	.ctn-preloader .animation-preloader .txt-loading {
+	  font: bold 2em 'Montserrat', sans-serif;
+	}
+}
+/*Fin estilos loading*/
+/*movil*/
+/*Portrait*/
+/*Default*/
+@media (max-width: 575.98px)and (orientation:portrait) {
+  .logo-navbar {
+    width: 30%;
+  }
+
+  .inicio-carsa img {
+    display: none;
+  }
+
+  .inicio-carsa {
+    margin-top: 28%;
+    width: 50vh;
+    height: 38vh;
+    background-image: url(/img/inicio/portada-dos.jpg);
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
+
+  }
+
+  .portada-carsa {
+    position: relative;
+    width: 10% !important;
+    height: 90% !important;
+  }
+
+  .inicio-carousel img {
+    width: 50vh !important;
+    height: 50vh !important;
+  }
+
+  .inicio-carousel {
+    width: 50vh;
+    height: 50vh;
+  }
+
+  .wave-line {
+    display: none;
+  }
+
+  .logo-navbar {
+    width: 20%;
+  }
+
+  .iso-blanco {
+    padding: 80px 50px 0 0;
+    height: 94vh;
+  }
+
+  .movil-nosotros {
+    display: none;
+  }
+
+  .ibnorca-text img {
+    display: none;
+  }
+
+  .ibnorca {
+    width: 90% !important;
+  }
+
+  .iso-blanco2 {
+    background-color: white;
+    border-radius: 1%;
+    position: relative;
+    bottom: 100px;
+    padding: 0px 30px 0px 30px;
+    background-image: none;
+    background-size: cover;
+    /* Ajusta la imagen para que cubra todo el contenedor */
+    background-repeat: no-repeat;
+    /* Evita que la imagen se repita */
+    width: 100%;
+    /* Asegúrate de que el contenedor tenga un ancho */
+    height: 180VH;
+    /* O cualquier altura que desees */
+  }
+
+  .fondo_valores {
+    width: 100%;
+    background-image: none
+  }
+
+  .fondo_valores img {
+    width: 100%;
+  }
+
+}
+
+/*landscape*/
+@media (min-width: 576px) and (max-width: 991.98px) and (orientation:landscape) {
+  body {
+    background: black;
+  }
+}
+
+/*fin movil*/
+
+
+@media screen and (min-width: 1920px) {
+
+  /* Estilos específicos para pantallas de 16 pulgadas en adelante */
+  body {
+    background-color: #ffb900;
+    /* Ejemplo de ajuste */
+  }
+}
+
+
+
+
+@keyframes flotante {
+  0% {
+    transform: translateY(0px);
+    /* Posición inicial */
+  }
+
+  50% {
+    transform: translateY(-30px);
+    /* Movimiento hacia arriba */
+  }
+
+  100% {
+    transform: translateY(0px);
+    /* Vuelve a la posición inicial */
+  }
+}
+
+@keyframes flotante-bottom {
+  0% {
+    transform: translateY(0px);
+    /* Posición inicial */
+  }
+
+  50% {
+    transform: translateY(30px);
+    /* Movimiento hacia arriba */
+  }
+
+  100% {
+    transform: translateY(0px);
+    /* Vuelve a la posición inicial */
+  }
+}
+
+@keyframes rotacionDerecha {
+  0% {
+    transform: rotate(0deg);
+    /* Posición inicial */
+  }
+
+  50% {
+    transform: rotate(30deg);
+    /* Completa una rotación */
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotacionIzquierda {
+  0% {
+    transform: rotate(0deg);
+    /* Posición inicial */
+  }
+
+  50% {
+    transform: rotate(-30deg);
+    /* Completa una rotación */
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes escalar {
+  0% {
+      transform: scale(1); /* Tamaño original */
+  }
+  50% {
+      transform: scale(0.9); /* Escala a la mitad de su tamaño */
+  }
+  100% {
+      transform: scale(1); /* Vuelve al tamaño original */
+  }
+}
+.transition {
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Duración y tipo de transición */
+}
+
+.scale-out {
+  transform: scale(0); /* Reduce el tamaño a 0 */
+  opacity: 0; /* Hace que sea invisible */
+}
+
+.scale-in {
+  transform: scale(1); /* Tamaño normal */
+  opacity: 1; /* Completamente visible */
+}
+
+.scale-start {
+  transform: scale(0.1); /* Comienza un poco pequeño */
+  opacity: 0; /* Inicialmente invisible */
+}
+@keyframes ring {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(15deg); }
+  20% { transform: rotate(-10deg); }
+  30% { transform: rotate(15deg); }
+  40% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(-5deg); }
+  70% { transform: rotate(5deg); }
+  80% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+
