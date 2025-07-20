@@ -1,0 +1,63 @@
+/* Estilos del carrusel */
+.carousel-container {
+    background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.8) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+    padding: 0.5rem;
+}
+
+
+
+#imageContainer {
+    display: flex;
+    will-change: transform;
+}
+
+.carousel-image {
+    flex: 0 0 auto; /* 112px */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-image:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.carousel-image.active {
+    transform: scale(1.1) translateY(-8px);
+    border-color: #ffd230;
+    box-shadow: 0 15px 35px rgba(251, 191, 36, 0.4);
+}
+
+.nav-btn {
+    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%);
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.3) 0%, rgba(251, 191, 36, 0.2) 100%);
+    transform: scale(1.05);
+}
+
+/* Efecto flotante para la imagen principal */
+.main-image {
+    animation: flotante 3.5s ease-in-out infinite;
+}
+
+@keyframes flotante {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Transiciones para el fondo */
+#backgroundImage {
+    transition: opacity 0.8s ease-in-out, background-image 0.8s ease-in-out;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
