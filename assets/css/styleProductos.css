@@ -61,3 +61,129 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos del carrusel móvil */
+.carousel-container-movil {
+    background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.8) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+    padding: 0.5rem;
+}
+
+#imageContainer-movil {
+    display: flex;
+    will-change: transform;
+}
+
+.carousel-image-movil {
+    flex: 0 0 auto;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-image-movil:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.carousel-image-movil.active {
+    transform: scale(1.1) translateY(-8px);
+    border-color: #ffd230;
+    box-shadow: 0 15px 35px rgba(251, 191, 36, 0.4);
+}
+
+.nav-btn-movil {
+    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%);
+    transition: all 0.3s ease;
+}
+
+.nav-btn-movil:hover {
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.3) 0%, rgba(251, 191, 36, 0.2) 100%);
+    transform: scale(1.05);
+}
+
+/* Efecto flotante para la imagen principal móvil */
+.main-image-movil {
+    animation: flotante-movil 3.5s ease-in-out infinite;
+}
+
+@keyframes flotante-movil {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Transición para el título móvil */
+.titulo-producto-movil {
+    transition: all 0.5s ease-in-out;
+}
+.titulo-producto-movil-uno {
+    transition: all 0.5s ease-in-out;
+}
+
+
+/* Efectos de transición para cambio de producto */
+.fade-out {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Carrusel móvil - Estilos corregidos */
+.carousel-container-movil {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+#imageContainer-movil {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+.carousel-image-movil {
+    flex: 0 0 auto;
+    width: 100px; /* Ancho fijo para cada imagen */
+    height: auto;
+    border-radius: 1rem;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.carousel-image-movil.active {
+    border-color: #ffd230;
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(251, 191, 36, 0.4);
+}
+

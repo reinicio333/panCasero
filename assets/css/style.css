@@ -40,6 +40,25 @@ body {
 .flotante:hover img {
   animation: ring 1s ease-in-out;
 }
+.flotante2 {
+  position: fixed;
+  bottom: 25px;
+  left: 30px;
+  z-index: 100;
+}
+
+.flotante2 a {
+  display: inline-block; /* Esto hace que el ancho se ajuste al contenido */
+}
+
+.flotante2 img {
+  width: 75.78px; 
+  height: auto; /* Mantiene la proporción */
+}
+
+.flotante2:hover img {
+  animation: ring 1s ease-in-out;
+}
 
 .logo_principal{
   animation: escalar 3.5s ease-in-out infinite;

@@ -88,6 +88,107 @@ document.addEventListener('DOMContentLoaded', function() {
             updateCarousel();
         }, 20000);
     });
+    
+
+ // CÓDIGO MÓVIL SIMPLIFICADO (SIN TOUCH)
+
+    const carouselMovil = document.getElementById('imageContainer-movil');
+    const prevBtnMovil = document.getElementById('prevBtn-movil');
+    const nextBtnMovil = document.getElementById('nextBtn-movil');
+    const imagesMovil = document.querySelectorAll('.carousel-image-movil');
+    const mainImageMovil = document.querySelector('.main-image-movil');
+    const tituloProductoMovil = document.querySelector('.titulo-producto-movil');
+    const tituloProductoMovilUno = document.querySelector('.titulo-producto-movil-uno');
+
+    let currentIndexMovil = 0;
+    const itemWidthMovil = 100; // Ancho de cada item del carrusel
+
+    function updateCarouselMovil() {
+        // Asegurar que el índice esté dentro de los límites
+        if (currentIndexMovil < 0) currentIndexMovil = imagesMovil.length - 1;
+        if (currentIndexMovil >= imagesMovil.length) currentIndexMovil = 0;
+        
+        // Calcular desplazamiento
+        let offsetMovil = -currentIndexMovil * itemWidthMovil;
+        
+        // Aplicar transformación
+        if (carouselMovil) {
+            carouselMovil.style.transform = `translateX(${offsetMovil}px)`;
+        }
+        
+        // Actualizar clase active
+        imagesMovil.forEach((img, index) => {
+            img.classList.toggle('active', index === currentIndexMovil);
+        });
+        
+        // Actualizar imagen principal y título
+        if (imagesMovil[currentIndexMovil]) {
+            const activeImage = imagesMovil[currentIndexMovil];
+            
+            // Animación de transición
+            if (mainImageMovil) {
+                mainImageMovil.style.opacity = '0';
+                setTimeout(() => {
+                    mainImageMovil.src = activeImage.dataset.main;
+                    mainImageMovil.style.opacity = '1';
+                }, 300);
+            }
+            
+            if (tituloProductoMovil) {
+                tituloProductoMovil.classList.add('fade-out');
+                setTimeout(() => {
+                    tituloProductoMovil.textContent = activeImage.dataset.name.toUpperCase();
+                    tituloProductoMovil.classList.remove('fade-out');
+                    tituloProductoMovil.classList.add('fade-in');
+                    
+                    setTimeout(() => {
+                        tituloProductoMovil.classList.remove('fade-in');
+                    }, 500);
+                }, 300);
+            }
+            if (tituloProductoMovilUno) {
+                tituloProductoMovilUno.classList.add('fade-out');
+                setTimeout(() => {
+                    tituloProductoMovilUno.textContent = activeImage.dataset.uno.toUpperCase();
+                    tituloProductoMovilUno.classList.remove('fade-out');
+                    tituloProductoMovilUno.classList.add('fade-in');
+                    
+                    setTimeout(() => {
+                        tituloProductoMovilUno.classList.remove('fade-in');
+                    }, 500);
+                }, 300);
+            }
+        }
+    }
+
+    // Eventos para flechas de navegación
+    if (prevBtnMovil) {
+        prevBtnMovil.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentIndexMovil--;
+            updateCarouselMovil();
+        });
+    }
+
+    if (nextBtnMovil) {
+        nextBtnMovil.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentIndexMovil++;
+            updateCarouselMovil();
+        });
+    }
+
+    // Eventos para clic en imágenes
+    imagesMovil.forEach((img, index) => {
+        img.addEventListener('click', function(e) {
+            e.preventDefault();
+            currentIndexMovil = index;
+            updateCarouselMovil();
+        });
+    });
+
+    // Inicializar
+    updateCarouselMovil();
 });
 
 
