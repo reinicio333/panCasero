@@ -76,17 +76,17 @@ gsap.from(".vision_imagen", {
 gsap.from('.gsap_palabras_movil', {
   duration: 1.2,
   opacity: 0,
-  delay: 2.2
+  delay: 0.22
 });
 gsap.from('.mision_imagen_movil', {
    x: -300,
   duration: 1.2,
   opacity: 0,
-  delay: 3.2
+  delay: 1.2
 });
 gsap.from('.vision_imagen_movil', {
    x: 300,
   duration: 1.2,
   opacity: 0,
-  delay: 4.2
+  delay: 2.2
 });

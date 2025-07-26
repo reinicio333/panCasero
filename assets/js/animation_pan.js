@@ -1,22 +1,22 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const carousel = document.getElementById('imageContainer');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     const images = document.querySelectorAll('.carousel-image');
     const mainImage = document.getElementById('mainImage');
+
     const mainImagePan = document.getElementById('mainImagePan');
     const backgroundImage = document.getElementById('imagenFondo');
-    
+
     let currentIndex = 0;
     const itemWidth = 112 + 24; // width (7rem = 112px) + gap (1.5rem = 24px)
     const visibleItems = 3;
-    
+
     function updateCarousel() {
-        // Asegurarse que el índice esté dentro de los límites
+        // Control de índices y desplazamiento (mantén tu código existente)
         if (currentIndex < 0) currentIndex = images.length - 1;
         if (currentIndex >= images.length) currentIndex = 0;
-        
-        // Calcular el desplazamiento para centrar la imagen activa
+
         let offset;
         if (currentIndex < visibleItems - 1) {
             offset = 0;
@@ -25,32 +25,48 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             offset = -(currentIndex - 1) * itemWidth;
         }
-        
+
         carousel.style.transform = `translateX(${offset}px)`;
-        
-        // Actualizar clases activas
+
         images.forEach((img, index) => {
             img.classList.toggle('active', index === currentIndex);
         });
-        
-        // Actualizar imagen principal y fondo
+
         if (images[currentIndex]) {
             const activeImage = images[currentIndex];
-            
-            // Efecto de transición para la imagen principal
-            mainImage.style.opacity = '0';
-            setTimeout(() => {
-                mainImage.src = activeImage.dataset.main;
-                mainImage.style.opacity = '1';
-            }, 300);
 
-             mainImagePan.style.opacity = '0';
+            // 1. Iniciar transición de opacidad
+            mainImage.style.opacity = '0';
+
+            // 2. Cambiar tamaño Y contenido AL MISMO TIEMPO
+            setTimeout(() => {
+                // Aplicar clases de tamaño
+                 if (activeImage.dataset.name === "Bizcocho") {
+                mainImage.classList.add('w-[90%]', 'mr-[10%]');
+                mainImage.classList.remove('w-[68%]', 'mr-[0rem]');
+            } else {
+                mainImage.classList.add('w-[68%]', 'mr-[0rem]');
+                mainImage.classList.remove('w-[90%]', 'mr-[10%]');
+            }
+
+                // Cambiar imagen
+                mainImage.src = activeImage.dataset.main;
+
+                // Forzar recálculo para activar transición
+                void mainImage.offsetWidth;
+
+                // Restaurar opacidad
+                mainImage.style.opacity = '1';
+            }, 300); // Delay mínimo para agrupar cambios
+
+            // 3. Imagen del pan (sin cambios)
+            mainImagePan.style.opacity = '0';
             setTimeout(() => {
                 mainImagePan.src = activeImage.dataset.pan;
                 mainImagePan.style.opacity = '1';
             }, 300);
-            
-            // Efecto de transición para el fondo
+
+            // 4. Fondo (código existente)
             backgroundImage.style.opacity = '0';
             setTimeout(() => {
                 backgroundImage.style.backgroundImage = `url('${activeImage.dataset.bg}')`;
@@ -58,35 +74,35 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 300);
         }
     }
-    
+
     // Navegación con flechas
     prevBtn.addEventListener('click', () => {
         currentIndex--;
         updateCarousel();
     });
-    
+
     nextBtn.addEventListener('click', () => {
         currentIndex++;
         updateCarousel();
     });
-    
+
     // Navegación al hacer clic en imágenes
     images.forEach(img => {
-        img.addEventListener('click', function() {
+        img.addEventListener('click', function () {
             currentIndex = parseInt(this.dataset.index);
             updateCarousel();
         });
     });
-    
+
     // Inicializar
     updateCarousel();
-    
+
     // Opcional: Autoplay (puedes quitarlo si no lo necesitas)
     let autoplay = setInterval(() => {
         currentIndex++;
         updateCarousel();
     }, 20000);
-    
+
     // Pausar autoplay al interactuar
     carousel.addEventListener('mouseenter', () => clearInterval(autoplay));
     carousel.addEventListener('mouseleave', () => {
@@ -113,24 +129,24 @@ document.addEventListener('DOMContentLoaded', function() {
         // Asegurar que el índice esté dentro de los límites
         if (currentIndexMovil < 0) currentIndexMovil = imagesMovil.length - 1;
         if (currentIndexMovil >= imagesMovil.length) currentIndexMovil = 0;
-        
+
         // Calcular desplazamiento
         let offsetMovil = -currentIndexMovil * itemWidthMovil;
-        
+
         // Aplicar transformación
         if (carouselMovil) {
             carouselMovil.style.transform = `translateX(${offsetMovil}px)`;
         }
-        
+
         // Actualizar clase active
         imagesMovil.forEach((img, index) => {
             img.classList.toggle('active', index === currentIndexMovil);
         });
-        
+
         // Actualizar imagen principal y título
         if (imagesMovil[currentIndexMovil]) {
             const activeImage = imagesMovil[currentIndexMovil];
-            
+
             // Animación de transición
             if (mainImageMovil) {
                 mainImageMovil.style.opacity = '0';
@@ -139,14 +155,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     mainImageMovil.style.opacity = '1';
                 }, 300);
             }
-            
+
             if (tituloProductoMovil) {
                 tituloProductoMovil.classList.add('fade-out');
                 setTimeout(() => {
                     tituloProductoMovil.textContent = activeImage.dataset.name.toUpperCase();
                     tituloProductoMovil.classList.remove('fade-out');
                     tituloProductoMovil.classList.add('fade-in');
-                    
+
                     setTimeout(() => {
                         tituloProductoMovil.classList.remove('fade-in');
                     }, 500);
@@ -158,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     tituloProductoMovilUno.textContent = activeImage.dataset.uno.toUpperCase();
                     tituloProductoMovilUno.classList.remove('fade-out');
                     tituloProductoMovilUno.classList.add('fade-in');
-                    
+
                     setTimeout(() => {
                         tituloProductoMovilUno.classList.remove('fade-in');
                     }, 500);
@@ -186,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Eventos para clic en imágenes
     imagesMovil.forEach((img, index) => {
-        img.addEventListener('click', function(e) {
+        img.addEventListener('click', function (e) {
             e.preventDefault();
             currentIndexMovil = index;
             updateCarouselMovil();

@@ -21,10 +21,10 @@
 
 <body class="bg-gradient-to-b from-stone-900 to-[#4e9f42]">
     <!-- Inicio boton Whatsapp Flotante -->
-    <div class="flotante">
+    <div class="flotante hidden md:block">
         <a href="https://wa.link/0q8fpi" target="_blank"><img src="../assets/img/medios/whatsapp.png" alt=""></a>
     </div>
-    <div class="flotante2">
+    <div class="flotante2 hidden md:block">
         <a data-modal-target="default-modal" data-modal-toggle="default-modal" class="cursor-pointer"><img
                 src="../assets/img/medios/catalogo.webp" alt=""></a>
     </div>
@@ -39,10 +39,14 @@
                 <img src="../assets/img/inicio/logo.webp" class="w-20 md:w-28 " alt="Logo Pan Casero">
             </a>
             <div
-                class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse animate__animated animate__bounceInRight">
+                class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse animate__animated animate__bounceInRight">
                 <img src="../assets/img/inicio/ICONOS-01.webp" class="w-20 md:w-14 hidden md:block" alt="Logo Facebook">
                 <img src="../assets/img/inicio/ICONOS-02.webp" class="w-20 md:w-14 hidden md:block" alt="Logo Whatsapp">
                 <img src="../assets/img/inicio/tiktok.webp" class="w-20 md:w-14 hidden md:block" alt="Logo Instagram">
+                <div class="md:hidden">
+                    <a data-modal-target="default-modal-2" data-modal-toggle="default-modal" class="cursor-pointer"><img
+                            class="w-15" src="../assets/img/medios/catalogo.webp" alt=""></a>
+                </div>
                 <button data-collapse-toggle="navbar-sticky" type="button"
                     class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 "
                     aria-controls="navbar-sticky" aria-expanded="false">
@@ -236,7 +240,7 @@
                     </div>
                     <div class="flex items-center justify-center ml-20 w-full">
                         <!-- Carrusel -->
-                        <div class="carousel-container rounded-3xl gap-2 items-center flex -mr-0 2xl:-mr-18">
+                        <div class="carousel-container  rounded-3xl gap-2 items-center flex -mr-0 2xl:-mr-18">
                             <!-- Flecha izquierda -->
                             <button id="prevBtn"
                                 class="nav-btn p-3 rounded-full transition-all duration-300 hover:shadow-xl cursor-pointer">
@@ -250,7 +254,7 @@
                             <!-- Contenedor del carrusel -->
                             <div class="carousel-viewport overflow-hidden h-auto w-[15rem] 2xl:w-[26rem] relative">
                                 <!-- Imágenes del carrusel -->
-                                <div class="flex gap-6 items-center transition-transform duration-500 mt-5 mb-5 ml-5"
+                                <div class="flex gap-6 items-center  transition-transform duration-500 mt-5 mb-5 ml-5"
                                     id="imageContainer">
                                     <img src="../assets/img/nuestros_productos/panaderia/mesa.webp"
                                         class="w-[30%] xl:w-[30%] 2xl:w-[28%] object-fill rounded-2xl border-3 border-white/30 hover:border-amber-300 cursor-pointer carousel-image active"
@@ -326,7 +330,8 @@
 
             <div class="flex items-center justify-center mr-[15%] relative">
                 <img id="mainImage" src="../assets/img/nuestros_productos/panaderia/mesas.webp"
-                    class="w-[68%] h-auto main-image transition-opacity duration-500" alt="producto principal">
+                    class="w-[68%] h-auto main-image main-imagen-principal transition-opacity duration-500"
+                    alt="producto principal">
                 <img id="mainImagePan" src="../assets/img/nuestros_productos/panaderia/mesaUno.webp"
                     class="w-[50%] h-auto main-image transition-opacity duration-500 absolute left-0 bottom-0"
                     alt="producto principal">
@@ -335,7 +340,7 @@
     </div>
 
     <!-- Movil Carrusel-->
-    <div class="bg-[#004026] relative md:hidden">
+    <div class="bg-[#004026] relative md:hidden min-h-[90vh] flex flex-col justify-between items-center  ">
         <!-- Contenedor del título con z-20 -->
         <div class="bg-[#007741] w-full h-[15vh] mt-23 md:hidden text-center rounded-b-[2rem] shadow-xl/30 z-15 relative 
             flex flex-col justify-center items-center"> <!-- Añadido: flex, flex-col, justify-center, items-center -->
@@ -346,9 +351,9 @@
         </div>
 
         <!-- Imagen con z-10 y position relative para que respete el stacking -->
-        <div class="z-10 relative bg-cover bg-center flex justify-center"
+        <div class="z-10 relative bg-cover bg-center flex justify-center "
             style="background-image: url('../assets/img/nuestros_productos/panaderia/fondo_movil.webp');">
-            <img src="../assets/img/nuestros_productos/panaderia/mesas.webp" class="w-[40%] main-image-movil mt-5"
+            <img src="../assets/img/nuestros_productos/panaderia/mesas.webp" class="w-[55%] main-image-movil mt-5"
                 alt="">
         </div>
 
@@ -492,6 +497,7 @@
     </div>
     <!-- Fin Footer -->
     <!-- Modal modificado -->
+
     <div id="default-modal" tabindex="-1" aria-hidden="true"
         class="hidden fixed top-0 left-0 right-0 bottom-0 z-50 w-full overflow-hidden bg-gray-900/50 flex items-center justify-center">
         <div class="relative w-full max-w-5xl h-[90vh]">
@@ -517,6 +523,38 @@
             </div>
         </div>
     </div>
+    <!-- Modal Movil -->
+    <div id="default-modal-2" tabindex="-1" aria-hidden="true"
+        class="hidden fixed top-0 left-0 right-0 bottom-0 z-50 w-full overflow-hidden bg-gray-900/50 flex items-center justify-center">
+        <div class="relative w-full max-w-5xl h-[90vh]">
+            <div class="relative bg-white rounded-lg shadow-lg h-full flex flex-col">
+                <div class="flex justify-end p-2">
+                    <button type="button" class="text-gray-500 hover:text-gray-700" data-modal-hide="default-modal-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex-1 overflow-hidden p-4">
+                    <div class="flipbook-container" style="height: 70vh; width: 100%;">
+                        <div class="_df_book" style="height: 100%; width: 100%;" webgl="true"
+                            source="../assets/libro/books/catalogo2025.pdf" id="df_manual_book"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
     <!-- Libro  -->
     <script src="../assets/libro/js/libs/jquery.min.js" type="text/javascript"></script>
     <script src="../assets/libro/js/libs/three.min.js" type="text/javascript"></script>
@@ -529,6 +567,7 @@
 
     <script src="../assets/js/animation_pan.js"></script>
     <script src="../assets/js/index.js"></script>
+
 
 </body>
 

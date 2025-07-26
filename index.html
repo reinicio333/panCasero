@@ -25,12 +25,13 @@
 <body>
 
 
-  <div class="flotante">
+  <div class="flotante hidden md:block">
     <a href="https://wa.link/0q8fpi" target="_blank"><img src="assets/img/medios/whatsapp.png" alt=""></a>
   </div>
 
-  <div class="flotante2">
-    <a data-modal-target="default-modal" data-modal-toggle="default-modal"  class="cursor-pointer"><img src="assets/img/medios/catalogo.webp" alt=""></a>
+  <div class="flotante2 hidden md:block">
+    <a data-modal-target="default-modal" data-modal-toggle="default-modal" class="cursor-pointer"><img
+        src="assets/img/medios/catalogo.webp" alt=""></a>
   </div>
 
 
@@ -41,10 +42,15 @@
         class="flex items-center space-x-3 rtl:space-x-reverse animate__animated animate__bounceInLeft">
         <img src="assets/img/inicio/logo.webp" class="w-20 lg:w-28 " alt="Logo Pan Casero">
       </a>
+
       <div class="flex lg:order-2 space-x-3 lg:space-x-0 rtl:space-x-reverse animate__animated animate__bounceInRight">
         <img src="assets/img/inicio/ICONOS-01.webp" class="w-20 lg:w-14 hidden lg:block" alt="Logo Facebook">
         <img src="assets/img/inicio/ICONOS-02.webp" class="w-20 lg:w-14 hidden lg:block" alt="Logo Whatsapp">
         <img src="assets/img/inicio/tiktok.webp" class="w-20 lg:w-14 hidden lg:block" alt="Logo Instagram">
+        <div class="md:hidden">
+          <a data-modal-target="default-modal-2" data-modal-toggle="default-modal" class="cursor-pointer"><img
+              class="w-15" src="assets/img/medios/catalogo.webp" alt=""></a>
+        </div>
         <button data-collapse-toggle="navbar-sticky" type="button"
           class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 "
           aria-controls="navbar-sticky" aria-expanded="false">
@@ -224,7 +230,7 @@
       class="pan_inferior_izquierdo w-full lg:w-[30%] 2xl:w-[26%] absolute -bottom-10 left-16  -rotate-[20deg]"
       alt="Portas Pan casero">
     <img src="assets/img/inicio/panes/queque.webp"
-      class="pan_inferior_central w-full lg:w-[25%] xl:w-[10%] 2xl:w-[20%] absolute -bottom-48 left-0 right-0 m-auto scale-x-[-1] -rotate-[60deg]"
+      class="pan_inferior_central w-full lg:w-[25%] xl:w-[10%] 2xl:w-[20%] absolute -bottom-40 left-0 right-0 m-auto scale-x-[-1] -rotate-[60deg]"
       alt="Portas Pan casero">
     <img src="assets/img/inicio/panes/canela.webp"
       class="pan_inferior w-full lg:w-[35%] 2xl:w-[31%] absolute -bottom-48 -right-30 scale-x-[-1] -rotate-[40deg]"
@@ -237,8 +243,7 @@
       alt="Portas Pan casero">
   </div>
 
-  <div id="content-container"
-    class="vista_principal w-full h-[62vh] relative overflow-hidden paraNavbar lg:hidden">
+  <div id="content-container" class="vista_principal w-full h-[62vh] relative overflow-hidden paraNavbar lg:hidden">
     <img src="assets/img/inicio/logo.webp"
       class="logo_principal w-[70%] absolute top-0 bottom-0 left-0 right-0 m-auto pt-17" alt="Portas Pan casero">
     <img src="assets/img/inicio/panes/brazo_gitano.webp"
@@ -385,7 +390,7 @@
     </div>
   </div>
 
-<!-- Modal modificado -->
+  <!-- Modal modificado -->
   <div id="default-modal" tabindex="-1" aria-hidden="true"
     class="hidden fixed top-0 left-0 right-0 bottom-0 z-50 w-full overflow-hidden bg-gray-900/50 flex items-center justify-center">
     <div class="relative w-full max-w-5xl h-[90vh]">
@@ -405,6 +410,27 @@
             <div class="_df_book" height="100%" webgl="true" source="assets/libro/books/catalogo2025.pdf"
               id="df_manual_book">
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Movil -->
+  <div id="default-modal-2" tabindex="-1" aria-hidden="true"
+    class="hidden fixed top-0 left-0 right-0 bottom-0 z-50 w-full overflow-hidden bg-gray-900/50 flex items-center justify-center">
+    <div class="relative w-full max-w-5xl h-[90vh]">
+      <div class="relative bg-white rounded-lg shadow-lg h-full flex flex-col">
+        <div class="flex justify-end p-2">
+          <button type="button" class="text-gray-500 hover:text-gray-700" data-modal-hide="default-modal-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="flex-1 overflow-hidden p-4">
+          <div class="flipbook-container" style="height: 70vh; width: 100%;">
+            <div class="_df_book" style="height: 100%; width: 100%;" webgl="true"
+              source="assets/libro/books/catalogo2025.pdf" id="df_manual_book"></div>
           </div>
         </div>
       </div>
