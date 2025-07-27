@@ -41,13 +41,13 @@ document.addEventListener('DOMContentLoaded', function () {
             // 2. Cambiar tamaño Y contenido AL MISMO TIEMPO
             setTimeout(() => {
                 // Aplicar clases de tamaño
-                 if (activeImage.dataset.name === "Bizcocho") {
-                mainImage.classList.add('w-[90%]', 'mr-[10%]');
-                mainImage.classList.remove('w-[68%]', 'mr-[0rem]');
-            } else {
-                mainImage.classList.add('w-[68%]', 'mr-[0rem]');
-                mainImage.classList.remove('w-[90%]', 'mr-[10%]');
-            }
+                if (activeImage.dataset.name === "Bizcocho") {
+                    mainImage.classList.add('w-[90%]', 'mr-[10%]');
+                    mainImage.classList.remove('w-[68%]', 'mr-[0rem]');
+                } else {
+                    mainImage.classList.add('w-[68%]', 'mr-[0rem]');
+                    mainImage.classList.remove('w-[90%]', 'mr-[10%]');
+                }
 
                 // Cambiar imagen
                 mainImage.src = activeImage.dataset.main;
@@ -111,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
             updateCarousel();
         }, 20000);
     });
+
     // CÓDIGO MÓVIL SIMPLIFICADO (SIN TOUCH)
 
     const carouselMovil = document.getElementById('imageContainer-movil');
@@ -118,6 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextBtnMovil = document.getElementById('nextBtn-movil');
     const imagesMovil = document.querySelectorAll('.carousel-image-movil');
     const mainImageMovil = document.querySelector('.main-image-movil');
+    const mainImageMovilUno = document.querySelector('.main-image-movil-uno');
     const tituloProductoMovil = document.querySelector('.titulo-producto-movil');
     const tituloProductoMovilUno = document.querySelector('.titulo-producto-movil-uno');
 
@@ -151,8 +153,22 @@ document.addEventListener('DOMContentLoaded', function () {
             if (mainImageMovil) {
                 mainImageMovil.style.opacity = '0';
                 setTimeout(() => {
+                    if (activeImage.dataset.name === "BIZCOCHO") {
+                        mainImageMovil.classList.add('w-[80%]', 'rotate-360' , 'pl-10');
+                        mainImageMovil.classList.remove('w-[50%]', 'rotate-0' , 'p-0');
+                    } else {
+                        mainImageMovil.classList.add('w-[50%]', 'rotate-0' , 'p-0');
+                        mainImageMovil.classList.remove('w-[80%]', 'rotate-360' , 'pl-10');
+                    }
                     mainImageMovil.src = activeImage.dataset.main;
                     mainImageMovil.style.opacity = '1';
+                }, 300);
+            }
+            if (mainImageMovilUno) {
+                mainImageMovilUno.style.opacity = '0';
+                setTimeout(() => {
+                    mainImageMovilUno.src = activeImage.dataset.solo;
+                    mainImageMovilUno.style.opacity = '1';
                 }, 300);
             }
 

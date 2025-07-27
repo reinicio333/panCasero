@@ -126,6 +126,10 @@
 .main-image-movil {
     animation: flotante-movil 3.5s ease-in-out infinite;
 }
+.main-image-movil-uno {
+    animation: flotante-movil 3.5s ease-in-out infinite;
+}
+
 
 @keyframes flotante-movil {
     0%, 100% {
