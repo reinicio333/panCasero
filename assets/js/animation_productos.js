@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const carousel = document.getElementById('imageContainer');
+   const carousel = document.getElementById('imageContainer');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     const images = document.querySelectorAll('.carousel-image');
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const backgroundImage = document.getElementById('imagenFondo');
     
     let currentIndex = 0;
-    const itemWidth = 112 + 24; // width (7rem = 112px) + gap (1.5rem = 24px)
+    const itemWidth = 71 + 20; // width (7rem = 112px) + gap (1.5rem = 24px)
     const visibleItems = 3;
     
     function updateCarousel() {
@@ -17,12 +17,18 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Calcular el desplazamiento para centrar la imagen activa
         let offset;
-        if (currentIndex < visibleItems - 1) {
+        if (images.length <= visibleItems) {
+            // Si hay pocas imágenes, no necesitamos desplazamiento
             offset = 0;
-        } else if (currentIndex > images.length - visibleItems) {
+        } else if (currentIndex < Math.floor(visibleItems/2)) {
+            // Para los primeros elementos, alinear al inicio
+            offset = 0;
+        } else if (currentIndex > images.length - Math.ceil(visibleItems/2) - 1) {
+            // Para los últimos elementos, alinear al final
             offset = -(images.length - visibleItems) * itemWidth;
         } else {
-            offset = -(currentIndex - 1) * itemWidth;
+            // Para elementos en el medio, centrar la imagen activa
+            offset = -(currentIndex - Math.floor(visibleItems/2)) * itemWidth;
         }
         
         carousel.style.transform = `translateX(${offset}px)`;
@@ -30,6 +36,15 @@ document.addEventListener('DOMContentLoaded', function() {
         // Actualizar clases activas
         images.forEach((img, index) => {
             img.classList.toggle('active', index === currentIndex);
+            
+            // Asegurarse que la imagen activa siempre sea completamente visible
+            if (index === currentIndex) {
+                img.style.opacity = '1';
+                img.style.transform = 'scale(1.05)'; // Opcional: pequeño efecto de destacado
+            } else {
+                img.style.opacity = '0.7'; // Opcional: reducir opacidad de imágenes no activas
+                img.style.transform = 'scale(1)';
+            }
         });
         
         // Actualizar imagen principal y fondo
@@ -88,7 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
             updateCarousel();
         }, 20000);
     });
-    
 
  // CÓDIGO MÓVIL SIMPLIFICADO (SIN TOUCH)
 

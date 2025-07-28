@@ -4,32 +4,48 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextBtn = document.getElementById('nextBtn');
     const images = document.querySelectorAll('.carousel-image');
     const mainImage = document.getElementById('mainImage');
-
     const mainImagePan = document.getElementById('mainImagePan');
     const backgroundImage = document.getElementById('imagenFondo');
 
     let currentIndex = 0;
-    const itemWidth = 112 + 24; // width (7rem = 112px) + gap (1.5rem = 24px)
+    const itemWidth = 72 + 24; // width (7rem = 112px) + gap (1.5rem = 24px)
     const visibleItems = 3;
 
     function updateCarousel() {
-        // Control de índices y desplazamiento (mantén tu código existente)
+        // Asegurarse que el índice esté dentro de los límites
         if (currentIndex < 0) currentIndex = images.length - 1;
         if (currentIndex >= images.length) currentIndex = 0;
-
+        
+        // Calcular el desplazamiento para centrar la imagen activa
         let offset;
-        if (currentIndex < visibleItems - 1) {
+        if (images.length <= visibleItems) {
+            // Si hay pocas imágenes, no necesitamos desplazamiento
             offset = 0;
-        } else if (currentIndex > images.length - visibleItems) {
+        } else if (currentIndex < Math.floor(visibleItems/2)) {
+            // Para los primeros elementos, alinear al inicio
+            offset = 0;
+        } else if (currentIndex > images.length - Math.ceil(visibleItems/2) - 1) {
+            // Para los últimos elementos, alinear al final
             offset = -(images.length - visibleItems) * itemWidth;
         } else {
-            offset = -(currentIndex - 1) * itemWidth;
+            // Para elementos en el medio, centrar la imagen activa
+            offset = -(currentIndex - Math.floor(visibleItems/2)) * itemWidth;
         }
-
+        
         carousel.style.transform = `translateX(${offset}px)`;
-
+        
+        // Actualizar clases activas y estilos
         images.forEach((img, index) => {
             img.classList.toggle('active', index === currentIndex);
+            
+            // Asegurarse que la imagen activa siempre sea completamente visible
+            if (index === currentIndex) {
+                img.style.opacity = '1';
+                img.style.transform = 'scale(1.05)';
+            } else {
+                img.style.opacity = '0.7';
+                img.style.transform = 'scale(1)';
+            }
         });
 
         if (images[currentIndex]) {
@@ -57,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Restaurar opacidad
                 mainImage.style.opacity = '1';
-            }, 300); // Delay mínimo para agrupar cambios
+            }, 300);
 
             // 3. Imagen del pan (sin cambios)
             mainImagePan.style.opacity = '0';
@@ -66,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 mainImagePan.style.opacity = '1';
             }, 300);
 
-            // 4. Fondo (código existente)
+            // 4. Fondo
             backgroundImage.style.opacity = '0';
             setTimeout(() => {
                 backgroundImage.style.backgroundImage = `url('${activeImage.dataset.bg}')`;
@@ -88,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Navegación al hacer clic en imágenes
     images.forEach(img => {
-        img.addEventListener('click', function () {
+        img.addEventListener('click', function() {
             currentIndex = parseInt(this.dataset.index);
             updateCarousel();
         });
@@ -102,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
         currentIndex++;
         updateCarousel();
     }, 20000);
-
+    
     // Pausar autoplay al interactuar
     carousel.addEventListener('mouseenter', () => clearInterval(autoplay));
     carousel.addEventListener('mouseleave', () => {
@@ -111,7 +127,6 @@ document.addEventListener('DOMContentLoaded', function () {
             updateCarousel();
         }, 20000);
     });
-
     // CÓDIGO MÓVIL SIMPLIFICADO (SIN TOUCH)
 
     const carouselMovil = document.getElementById('imageContainer-movil');
